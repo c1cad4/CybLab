@@ -13,7 +13,10 @@ pub struct Outcome {
     pub matched: bool,
 }
 pub fn evaluate(experiment: &Experiment, observed: &str) -> Result<Outcome, &'static str> {
-    if experiment.id.is_empty() || experiment.hypothesis.is_empty() || experiment.expected.is_empty() {
+    if experiment.id.is_empty()
+        || experiment.hypothesis.is_empty()
+        || experiment.expected.is_empty()
+    {
         return Err("incomplete experiment");
     }
     Ok(Outcome {
